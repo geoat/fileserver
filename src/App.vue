@@ -1,33 +1,37 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <h1>File Server</h1>
-      </div>
-      <v-spacer></v-spacer>
+  <v-app id="app">
+      <v-app-bar
+        app
+        color="primary"
+        dark
+        >
+        <div class="text-center">
+          <h1>File Server</h1>
+        </div>
     </v-app-bar>
-    <v-main>
-      <LandingPage/>
-    </v-main>
+    <LandingPage/>
   </v-app>
 </template>
 
-<script>
-import LandingPage from './components/LandingPage';
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import HelloWorld from './components/HelloWorld.vue';
+import LandingPage from './components/LandingPage.vue';
 
-export default {
-  name: 'App',
-
+@Component({
   components: {
+    HelloWorld,
     LandingPage,
   },
-
-  data: () => ({
-    //
-  }),
-};
+})
+export default class App extends Vue {}
 </script>
+
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 60px;
+}
+
+</style>
