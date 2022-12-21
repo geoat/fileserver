@@ -48,7 +48,7 @@
               </v-list-item-content>
               <v-list-item-action>
                 <v-btn icon>
-                  <v-icon color="grey lighten-1">mdi-information</v-icon>
+                  <v-icon color="grey">mdi-information</v-icon>
                 </v-btn>
               </v-list-item-action>
             </v-list-item>
@@ -86,7 +86,7 @@
     this.contents = FilesService.getFiles(this.path)
     .map((content) => {
       return {...content, isFolder: this.isFolder(content)}
-    });
+    })
   }
   }
 </script>
