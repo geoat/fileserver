@@ -1,6 +1,6 @@
 export enum Type {
-  Folder,
-  File
+  FOLDER,
+  FILE
 }
 export type File = {
   name: string

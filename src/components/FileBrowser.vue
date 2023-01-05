@@ -68,7 +68,7 @@
     data: () => ({
      chosenFile: null,
      contents: null,
-     FolderType: Type.Folder,
+     FolderType: Type.FOLDER,
      selected: null
     }),
     props: {
@@ -79,13 +79,15 @@
         FilesService.test()
       },
       isFolder(content) {
-        return content.type === Type.Folder
+        return content.type == this.FolderType
       }
     },
   mounted: function () {
-    this.contents = FilesService.getFiles(this.path)
-    .map((content) => {
-      return {...content, isFolder: this.isFolder(content)}
+    FilesService.getFiles(this.path).then(response => {
+      this.contents = response.map((content) => {
+        console.log(content)
+        return {...content, isFolder: this.isFolder(content)}
+      })
     })
   }
   }

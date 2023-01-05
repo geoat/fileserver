@@ -4,7 +4,7 @@ import axios from 'axios'
 //let authCallback: any
 
 const httpClient = axios.create({
-  baseURL: 'http://0.0.0.0:5000/',
+  baseURL: '/api',
   timeout: 5000
 })
 
